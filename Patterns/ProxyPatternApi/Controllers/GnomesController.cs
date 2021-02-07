@@ -13,14 +13,15 @@ namespace ProxyPatternApi.Controllers
         /// <summary>
         /// 
         /// </summary>
-        private OtherLibraryService _otherLibraryService;
+        private readonly IOtherLibraryService Service;
 
         /// <summary>
         /// 
         /// </summary>
-        public GnomesController()
+        /// <param name="service"></param>
+        public GnomesController(IOtherLibraryService service)
         {
-            _otherLibraryService = new OtherLibraryService();
+            Service = service;
         }
 
         /// <summary>
@@ -28,7 +29,7 @@ namespace ProxyPatternApi.Controllers
         /// </summary>
         public void BeHappyGnomes()
         {
-            _otherLibraryService.DoWork();
+            Service.DoWork();
         }
 
         /// <summary>
@@ -36,7 +37,7 @@ namespace ProxyPatternApi.Controllers
         /// </summary>
         public void DontCryGnomes()
         {
-            _otherLibraryService.DoWork();
+            Service.DoWork();
         }
 
         /// <summary>
@@ -44,7 +45,7 @@ namespace ProxyPatternApi.Controllers
         /// </summary>
         public void DontSleepAtWorkGnomes()
         {
-            _otherLibraryService.DoWork();
+            Service.DoWork();
         }
     }
 }

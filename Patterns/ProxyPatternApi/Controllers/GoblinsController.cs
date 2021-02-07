@@ -13,14 +13,15 @@ namespace ProxyPatternApi.Controllers
         /// <summary>
         /// 
         /// </summary>
-        private OtherLibraryService _otherLibraryService;
+        private readonly IOtherLibraryService Service;
 
         /// <summary>
         /// 
         /// </summary>
-        public GoblinsController()
+        /// <param name="service"></param>
+        public GoblinsController(IOtherLibraryService service)
         {
-            _otherLibraryService = new OtherLibraryService();
+            Service = service;
         }
 
         /// <summary>
@@ -28,7 +29,7 @@ namespace ProxyPatternApi.Controllers
         /// </summary>
         public void BeHappyGoblins()
         {
-            _otherLibraryService.DoWork();
+            Service.DoWork();
         }
 
         /// <summary>
@@ -36,7 +37,7 @@ namespace ProxyPatternApi.Controllers
         /// </summary>
         public void DontCryGoblins()
         {
-            _otherLibraryService.DoWork();
+            Service.DoWork();
         }
 
         /// <summary>
@@ -44,7 +45,7 @@ namespace ProxyPatternApi.Controllers
         /// </summary>
         public void DontSleepAtWorkGoblins()
         {
-            _otherLibraryService.DoWork();
+            Service.DoWork();
         }
     }
 }

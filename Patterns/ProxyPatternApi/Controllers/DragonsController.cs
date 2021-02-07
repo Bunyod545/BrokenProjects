@@ -15,14 +15,15 @@ namespace ProxyPatternApi.Controllers
         /// <summary>
         /// 
         /// </summary>
-        private IOtherLibraryService _otherLibraryService;
+        private readonly IOtherLibraryService Service;
 
         /// <summary>
         /// 
         /// </summary>
-        public DragonsController()
+        /// <param name="service"></param>
+        public DragonsController(IOtherLibraryService service)
         {
-            _otherLibraryService = new OtherLibraryProxy(new OtherLibraryService());
+            Service = service;
         }
 
         /// <summary>
@@ -30,7 +31,7 @@ namespace ProxyPatternApi.Controllers
         /// </summary>
         public void BeHappyDragon()
         {
-            _otherLibraryService.DoWork();
+            Service.DoWork();
         }
 
         /// <summary>
@@ -38,7 +39,7 @@ namespace ProxyPatternApi.Controllers
         /// </summary>
         public void DontCryDragon()
         {
-            _otherLibraryService.DoWork();
+            Service.DoWork();
         }
 
         /// <summary>
@@ -46,7 +47,7 @@ namespace ProxyPatternApi.Controllers
         /// </summary>
         public void DontSleepAtWorkDragon()
         {
-            _otherLibraryService.DoWork();
+            Service.DoWork();
         }
     }
 }

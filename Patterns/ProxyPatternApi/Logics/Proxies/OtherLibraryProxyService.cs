@@ -6,20 +6,20 @@ namespace ProxyPatternApi.Logics.Proxies
     /// <summary>
     /// 
     /// </summary>
-    public class OtherLibraryProxy : IOtherLibraryService
+    public class OtherLibraryProxyService : IOtherLibraryService
     {
         /// <summary>
         /// 
         /// </summary>
-        private OtherLibraryService _realService;
+        private IOtherLibraryService _realService;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="realService"></param>
-        public OtherLibraryProxy(OtherLibraryService realService)
+        public OtherLibraryProxyService()
         {
-            _realService = realService;
+            _realService = new OtherLibraryService();
         }
 
         /// <summary>
