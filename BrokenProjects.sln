@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{FF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyPatternApi", "Patterns\ProxyPatternApi\ProxyPatternApi.csproj", "{504BF5CE-31E2-4DF2-B6E1-E4D10E2443D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecoratorPatternApi", "Patterns\DecoratorPatternApi\DecoratorPatternApi.csproj", "{9DFAACE6-F19A-4A0C-9274-973E5C6C707F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{504BF5CE-31E2-4DF2-B6E1-E4D10E2443D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{504BF5CE-31E2-4DF2-B6E1-E4D10E2443D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{504BF5CE-31E2-4DF2-B6E1-E4D10E2443D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DFAACE6-F19A-4A0C-9274-973E5C6C707F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DFAACE6-F19A-4A0C-9274-973E5C6C707F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DFAACE6-F19A-4A0C-9274-973E5C6C707F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DFAACE6-F19A-4A0C-9274-973E5C6C707F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{504BF5CE-31E2-4DF2-B6E1-E4D10E2443D3} = {FFF6FF7B-9445-4301-8D4F-B9476893B4AA}
+		{9DFAACE6-F19A-4A0C-9274-973E5C6C707F} = {FFF6FF7B-9445-4301-8D4F-B9476893B4AA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0EF8B7AE-85D7-4D46-98B1-A5EF192026F1}
