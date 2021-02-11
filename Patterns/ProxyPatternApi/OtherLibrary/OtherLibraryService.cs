@@ -5,7 +5,7 @@ namespace ProxyPatternApi.OtherLibrary
     /// <summary>
     /// Other library interface don't change this file
     /// </summary>
-    public class OtherLibraryService : IOtherLibraryService
+    public sealed class OtherLibraryService : IOtherLibraryService
     {
         /// <summary>
         /// Other library method don't change it

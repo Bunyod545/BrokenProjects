@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ProxyPatternApi.OtherLibrary;
+using ProxyPatternApi.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +33,8 @@ namespace ProxyPatternApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProxyPatternApi", Version = "v1" });
             });
+
+            services.AddScoped<IOtherLibraryService>(s=> new OtherLibraryProxyService(new OtherLibraryService()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,13 +5,13 @@ namespace DecoratorPatternApi.Services.Notifications
     /// <summary>
     /// 
     /// </summary>
-    public class NotificationsService
+    public class NotificationsService :INotificationsService
     {
         /// <summary>
         /// 
         /// </summary>
         /// <param name="notifier"></param>
-        public void SendWarning(INotifier notifier)
+        public virtual void SendWarning(INotifier notifier)
         {
             notifier.Send("Warnings on system");
         }

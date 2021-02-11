@@ -1,4 +1,5 @@
 ﻿using DecoratorPatternApi.Services.Notifications;
+using DecoratorPatternApi.Services.Notifications.Interfaces;
 using DecoratorPatternApi.Services.Notifications.Notifiers;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,7 @@ namespace DecoratorPatternApi.Controllers
         /// 
         /// </summary>
         private INotificationsService _notificationsService;
+        private INotifier _notifer;
 
         /// <summary>
         /// 
@@ -30,8 +32,9 @@ namespace DecoratorPatternApi.Controllers
         /// </summary>
         public void SendTelegramWarning()
         {
-            var telegramNotifier = new TelegramNotifier();
-            _notificationsService.SendWarning(telegramNotifier);
+
+            var telegramNotifier = new TelegramNotifier(_notificationsService);
+            _notificationsService.SendWarning(_notifer);
         }
 
         /// <summary>
@@ -39,8 +42,8 @@ namespace DecoratorPatternApi.Controllers
         /// </summary>
         public void SendSmsWarning()
         {
-            var smsNotifier = new SmsNotifier();
-            _notificationsService.SendWarning(smsNotifier);
+            var smsNotifier = new SmsNotifier(_notificationsService);
+            _notificationsService.SendWarning(_notifer);
         }
 
         /// <summary>
@@ -48,8 +51,8 @@ namespace DecoratorPatternApi.Controllers
         /// </summary>
         public void SendEmailWarning()
         {
-            var emailNotifier = new EmailNotifier();
-            _notificationsService.SendWarning(emailNotifier);
+            var emailNotifier = new EmailNotifier(_notificationsService);
+            _notificationsService.SendWarning(_notifer);
         }
     }
 }
